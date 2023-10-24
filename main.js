@@ -10,12 +10,28 @@ const inspirationalQuotes = [
     {quote: "No act of kindness, no matter how small, is ever wasted.", author: "Aesop"},  
     {quote: "Change your thoughts and you change your world.", author: "Norman Vincent Peale"}  
 ];
-const inspirationalImages = [];
 
 const quoteText = document.getElementById('quote-text');
 const authorText = document.getElementById('author-text');
+const inspirationalImageElement = document.getElementById('inspo-img');
+const moreInspirationButton = document.getElementById('inspo-btn');
 
+let inspirationalImagesIndex = Math.floor(Math.random() * 5) + 1;
+let inspirationalImage = `img${inspirationalImagesIndex}`;
 let randomQuoteIndex = Math.floor(Math.random() * 10);
 
 quoteText.innerHTML = inspirationalQuotes[randomQuoteIndex].quote;
-authorText.innerHTML = inspirationalQuotes[randomQuoteIndex].author;
+authorText.innerHTML = "- " + inspirationalQuotes[randomQuoteIndex].author;
+inspirationalImageElement.src = "./resources/images/" + inspirationalImage + ".jpg";
+
+const newInspiration = () => {
+    inspirationalImagesIndex = Math.floor(Math.random() * 5) + 1;
+    inspirationalImage = `img${inspirationalImagesIndex}`;
+    randomQuoteIndex = Math.floor(Math.random() * 10);
+
+    quoteText.innerHTML = inspirationalQuotes[randomQuoteIndex].quote;
+    authorText.innerHTML = "- " + inspirationalQuotes[randomQuoteIndex].author;
+    inspirationalImageElement.src = "./resources/images/" + inspirationalImage + ".jpg";
+};
+
+moreInspirationButton.addEventListener('click', newInspiration)
