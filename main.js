@@ -16,14 +16,6 @@ const authorText = document.getElementById('author-text');
 const inspirationalImageElement = document.getElementById('inspo-img');
 const moreInspirationButton = document.getElementById('inspo-btn');
 
-let inspirationalImagesIndex = Math.floor(Math.random() * 5) + 1;
-let inspirationalImage = `img${inspirationalImagesIndex}`;
-let randomQuoteIndex = Math.floor(Math.random() * 10);
-
-quoteText.innerHTML = '"' + inspirationalQuotes[randomQuoteIndex].quote + '"';
-authorText.innerHTML = "- " + inspirationalQuotes[randomQuoteIndex].author;
-inspirationalImageElement.src = "./resources/images/" + inspirationalImage + ".jpg";
-
 const newInspiration = () => {
     inspirationalImagesIndex = Math.floor(Math.random() * 5) + 1;
     inspirationalImage = `img${inspirationalImagesIndex}`;
@@ -33,5 +25,7 @@ const newInspiration = () => {
     authorText.innerHTML = "- " + inspirationalQuotes[randomQuoteIndex].author;
     inspirationalImageElement.src = "./resources/images/" + inspirationalImage + ".jpg";
 };
+
+newInspiration();
 
 moreInspirationButton.addEventListener('click', newInspiration)
