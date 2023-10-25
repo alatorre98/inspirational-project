@@ -20,7 +20,7 @@ let inspirationalImagesIndex = Math.floor(Math.random() * 5) + 1;
 let inspirationalImage = `img${inspirationalImagesIndex}`;
 let randomQuoteIndex = Math.floor(Math.random() * 10);
 
-quoteText.innerHTML = inspirationalQuotes[randomQuoteIndex].quote;
+quoteText.innerHTML = '"' + inspirationalQuotes[randomQuoteIndex].quote + '"';
 authorText.innerHTML = "- " + inspirationalQuotes[randomQuoteIndex].author;
 inspirationalImageElement.src = "./resources/images/" + inspirationalImage + ".jpg";
 
